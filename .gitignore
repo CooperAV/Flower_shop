@@ -2,6 +2,6 @@
 Debug/*
 Alive/Debug/*
 UnAlive/Debug/*
-*.nsb
+*.ncb
 *.suo
 Flower_shop/Debug/*
