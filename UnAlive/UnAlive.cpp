@@ -32,7 +32,7 @@ int GetInputNumber()
 	char arr[6];
 	char temp;
 	while(true)
-	{ 
+	{
 		temp = _getch();
 		if(temp == 13)
 		{
@@ -44,7 +44,7 @@ int GetInputNumber()
 				break;
 			}
 		}
-		else 
+		else
 			if(temp == 8)
 			{
 				if (iter > 0)
@@ -71,7 +71,7 @@ int GetInputNumber()
 	}
 	std::cout << '\n';
 	int sym[] = { '0', '1', '2', '3', '4', '5','6', '7', '8', '9' };
-	int val[10] = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9}; 
+	int val[10] = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
 	int Result = 0;
 	for(int i = 0;( (arr[i] != '\n') ||(arr[i] < 5)) ; ++i)

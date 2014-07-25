@@ -7,7 +7,7 @@ public:
 	UnAlive_File(){}
 	~UnAlive_File(){}
 
-	void WriteFile(const std::vector<Product*> &pProd);	
+	void WriteFile(const std::vector<Product*> &pProd);
 	void ReadFile(std::vector<Product*> &pProd);
 	void PushBack(const std::vector<Product*> &pProd);
 private:

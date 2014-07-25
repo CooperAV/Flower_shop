@@ -6,6 +6,6 @@
 class WorkOut
 {
 public:
-	char Show_Menu(int nchoice);	
+	char Show_Menu(int nchoice);
 private:
 };

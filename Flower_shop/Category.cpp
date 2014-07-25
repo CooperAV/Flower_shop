@@ -16,7 +16,7 @@ Category::Category(LPWSTR pLibrary)
 		return;
 	}
 	else
-	{ 
+	{
 		Init = (InitFunc)GetProcAddress(m_hMode, "Init");
 		if(Init==NULL)
 		{
@@ -38,7 +38,7 @@ Category::Category(LPWSTR pLibrary)
 			nChoice = 1;
 		else
 		{
-			nChoice = rand()%2 + 1;	
+			nChoice = rand()%2 + 1;
 		}
 	}
 	m_pBase_Factory = Init();
@@ -62,7 +62,7 @@ Category::~Category()
 			if (pF)
 				fclose(pF);
 		}
-		FreeLibrary(m_hMode);	
+		FreeLibrary(m_hMode);
 	}
 }
 
@@ -117,7 +117,7 @@ int GetInputNumber()
 	char arr[6];
 	char temp;
 	while(true)
-	{ 
+	{
 		temp = _getch();
 		if(temp == 13)
 		{
@@ -129,7 +129,7 @@ int GetInputNumber()
 				break;
 			}
 		}
-		else 
+		else
 			if(temp == 8)
 			{
 				if (iter > 0)
@@ -156,7 +156,7 @@ int GetInputNumber()
 	}
 	std::cout << '\n';
 	int sym[] = { '0', '1', '2', '3', '4', '5','6', '7', '8', '9' };
-	int val[10] = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9}; 
+	int val[10] = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
 	int Result = 0;
 	for(int i = 0;( (arr[i] != '\n') ||(arr[i] < 5)) ; ++i)

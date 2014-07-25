@@ -70,7 +70,7 @@ void UnAlive_Output::SellProduct(std::vector<Product*> &pProd, double &ClientPok
 			}
 			else
 			{
-				std::cout << "\nSorry You don't have enough money to make this purchase ...";			
+				std::cout << "\nSorry You don't have enough money to make this purchase ...";
 			}
 		}
 		else
@@ -81,7 +81,7 @@ void UnAlive_Output::SellProduct(std::vector<Product*> &pProd, double &ClientPok
 	}
 	else
 	{
-		return;	
+		return;
 	}
 	_getch();
 }
@@ -184,7 +184,7 @@ void UnAlive_Output::SearchByCriteria(std::vector<Product*> &pProd, double &Clie
 				}
 				else
 				{
-					std::cout << "\nSorry You don't have enough money to make this purchase ...";			
+					std::cout << "\nSorry You don't have enough money to make this purchase ...";
 				}
 			}
 			else

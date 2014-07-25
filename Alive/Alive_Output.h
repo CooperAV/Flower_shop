@@ -9,7 +9,7 @@ class Alive_Output: public Base_Output	//Класс отвечающий за вывод данных!!!
 public:
 	Alive_Output(){}
 	virtual ~Alive_Output(){}
-	
+
 	void ShowProduct(const std::vector<Product*> &pProd);
 	void SellProduct(std::vector<Product*> &pProd, double &ClientPoket);
 	void SearchByCriteria(std::vector<Product*> &pProd, double &ClientPoket);

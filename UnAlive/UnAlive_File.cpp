@@ -20,11 +20,11 @@ void UnAlive_File::WriteFile(const std::vector<Product*> &pProd)
 		dat[i].m_pWeight = Temp->m_pWeight;
 	}
 	FILE *pFile = fopen("UnAlive_product.txt", "wb");
-	
+
 	fwrite(dat, sizeof(Data), pProd.size(), pFile);
 	delete [] dat;
 	fclose(pFile);
-}	
+}
 void UnAlive_File::ReadFile(std::vector<Product*> &pProd)
 {
 	FILE *pFile = fopen("UnAlive_product.txt", "rb");
@@ -39,7 +39,7 @@ void UnAlive_File::ReadFile(std::vector<Product*> &pProd)
 	rewind(pFile); // возвращаем указатель в начало файла!
 	Data *dat = new Data[num];
 	fread(dat, sizeof(Data), num, pFile);
-	fclose(pFile);	
+	fclose(pFile);
 	for(int i=0; i < num; ++i)
 	{
 		UnAlive_Product *pAl = new UnAlive_Product;
@@ -66,7 +66,7 @@ void UnAlive_File::PushBack(const std::vector<Product*> &pProd)
 		dat[i].m_pWeight = Temp->m_pWeight;
 	}
 	FILE *pFile = fopen("Push_Back_UnAlive.txt", "wb");
-	
+
 	fwrite(dat, sizeof(Data), pProd.size(), pFile);
 	delete [] dat;
 	fclose(pFile);

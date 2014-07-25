@@ -73,7 +73,7 @@ void Alive_Output::SellProduct(std::vector<Product*> &pProd, double &ClientPoket
 			}
 			else
 			{
-				std::cout << "\nSorry You don't have enough money to make this purchase ...";			
+				std::cout << "\nSorry You don't have enough money to make this purchase ...";
 			}
 		}
 		else
@@ -84,7 +84,7 @@ void Alive_Output::SellProduct(std::vector<Product*> &pProd, double &ClientPoket
 	}
 	else
 	{
-		return;	
+		return;
 	}
 	_getch();
 }
@@ -103,7 +103,7 @@ void Alive_Output::SearchByCriteria(std::vector<Product*> &pProd, double &Client
 	std::cout << "Please enter product \"Color\":\t\t";
 	std::cin.getline(TempColor, sizeof(TempColor));
 	if(strlen(TempColor) > 0)
-	{		
+	{
 		++nCount;
 	}
 	char TempSpike[10];
@@ -212,7 +212,7 @@ void Alive_Output::SearchByCriteria(std::vector<Product*> &pProd, double &Client
 				}
 				else
 				{
-					std::cout << "\nSorry You don't have enough money to make this purchase ...";			
+					std::cout << "\nSorry You don't have enough money to make this purchase ...";
 				}
 			}
 			else

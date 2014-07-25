@@ -21,7 +21,7 @@ Shop::Shop()
 			std::wstring LibName(FindFileData.cFileName);
 			LibList.push_back(LibName);
 		}
-		while (FindNextFile(hFile,&FindFileData));		
+		while (FindNextFile(hFile,&FindFileData));
 	}
 	for(unsigned int i = 0; i < LibList.size(); ++i)
 	{
@@ -59,7 +59,7 @@ void Shop::Run()
 		std::cout << "\t0. Exit\n";
 		unsigned int a;
 		std::cout << "\nYour choice: ";
-		a = GetInputNumber(); 
+		a = GetInputNumber();
 		if(a > CategoryList.size())
 		{
 			std::cout << "<Miss click> ...\nTry again ...\n"; _getch();
@@ -97,7 +97,7 @@ void Shop::Show_Menu()
 		if(Exit)
 			break;
 	}
-}	
+}
 void Shop::GetInputNewProduct()
 {
 	m_pCategory->InputNewProduct();
