@@ -12,10 +12,10 @@ public:
 
 	void ReadLastFile();
 	void Show_Menu();
-	void GetInputNewProduct();
-	void GetOutputProduct();
 	void Run();
+	void SellProduct();
 private:
+	double ClientPoket;
 	Category* m_pCategory;
 	std::vector<Category*> CategoryList;
 	WorkOut *m_pWork;

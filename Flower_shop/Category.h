@@ -19,20 +19,25 @@ public:
 	~Category();
 
 	void InputNewProduct();
-	void OutputProduct();
+	void OutputProductList(bool ShowNumber = false);
 	void SaveFile();
 	void LoadFile();
 	void Push_Back();
-	void Sell_Product();
 	bool IsComplete();
 	char* GetLibraryName();
 	int GetRandEvents();
 	void FindCriteria();
 	void RefillProduct();
+	int GetProductCount();
+	void OutputProduct(int Index);
+	double GetProductPriceByIndex(int Index);
+	unsigned int GetProductQuantityByIndex(int Index);
+	char* GetProductNameByIndex(int Index);
+	void SetProductQuantityByIndex(int Index, unsigned int Quantity);
 private:
-	double ClientPoket;
 	int nComplete;
 	int nChoice;
+	int GetCountProduct;
 	HMODULE m_hMode;
 	FILE *pF;
 	Base_Factory* m_pBase_Factory;

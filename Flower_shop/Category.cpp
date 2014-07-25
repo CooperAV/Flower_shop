@@ -6,7 +6,6 @@ Category::Category(LPWSTR pLibrary)
 {
 	nComplete = 0;
 	srand(time(NULL));
-	ClientPoket = 200 + rand()%200;
 	InitFunc Init;
 	m_hMode = LoadLibrary(pLibrary);
 	if(m_hMode==NULL)
@@ -83,9 +82,9 @@ void Category::InputNewProduct()
 {
 	m_pProd.push_back(m_pBase_Input->InputProduct());
 }
-void Category::OutputProduct()
+void Category::OutputProductList(bool ShowNumber)
 {
-	m_pBase_Output->ShowProduct(m_pProd);
+	m_pBase_Output->ShowProductList(m_pProd, ShowNumber);
 }
 void Category::SaveFile()
 {
@@ -99,17 +98,37 @@ void Category::Push_Back()
 {
 	m_pBase_File->PushBack(m_pProd);
 }
-void Category::Sell_Product()
-{
-	m_pBase_Output->SellProduct(m_pProd, ClientPoket);
-}
 void Category::FindCriteria()
 {
-	m_pBase_Output->SearchByCriteria(m_pProd, ClientPoket);
+	m_pBase_Output->SearchByCriteria(m_pProd);
 }
 void Category::RefillProduct()
 {
 	m_pBase_Output ->RefillProduct(m_pProd);
+}
+int Category::GetProductCount()
+{
+	return GetCountProduct = m_pProd.size();
+}
+void Category::OutputProduct(int Index)
+{
+	m_pBase_Output->ShowProduct(m_pProd[Index]);
+}
+double Category::GetProductPriceByIndex(int Index)
+{
+	return m_pProd[Index]->GetPrice();
+}
+unsigned int Category::GetProductQuantityByIndex(int Index)
+{
+	return m_pProd[Index]->GetQuantity();
+}
+char* Category::GetProductNameByIndex(int Index)
+{
+	return m_pProd[Index]->GetName();
+}
+void Category::SetProductQuantityByIndex(int Index, unsigned int Quantity)
+{
+	m_pProd[Index]->SetQuantity(Quantity);
 }
 int GetInputNumber()
 {

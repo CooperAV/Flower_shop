@@ -179,6 +179,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Product.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\Shop.cpp"
 				>
 			</File>

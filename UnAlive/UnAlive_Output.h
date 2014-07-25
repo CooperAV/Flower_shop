@@ -10,9 +10,9 @@ public:
 	UnAlive_Output(){}
 	virtual ~UnAlive_Output(){}
 
-	void ShowProduct(const std::vector<Product*> &pProd);
-	void SellProduct(std::vector<Product*> &pProd, double &ClientPoket);
-	void SearchByCriteria(std::vector<Product*> &pProd, double &ClientPoket);
+	void ShowProductList(const std::vector<Product*> &pProd, bool ShowNumbers = false);
+	void ShowProduct(Product * pProd);
+	void SearchByCriteria(std::vector<Product*> &pProd);
 	void RefillProduct(std::vector<Product*> &pProd);
 private:
 };
