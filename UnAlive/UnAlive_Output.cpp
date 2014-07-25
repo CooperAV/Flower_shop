@@ -87,15 +87,18 @@ void UnAlive_Output::SellProduct(std::vector<Product*> &pProd, double &ClientPok
 }
 void UnAlive_Output::SearchByCriteria(std::vector<Product*> &pProd, double &ClientPoket)
 {
-	unsigned int nCount = 0, j = 0, choice;
+	unsigned int j = 0, choice;
 	unsigned int ArrayFindProduct[100];
 	char TempName[20];
+    char currentFlag = 1;
+    char searchMask = 0;
 	std::cout << "\nPlease enter product \"Name\":\t\t";
 	std::cin.getline(TempName, sizeof(TempName));
 	if(strlen(TempName) > 0)
 	{
-		++nCount;
+        searchMask |= currentFlag;
 	}
+    currentFlag = currentFlag << 1;
 	char TempMetal[10];
 	int TempAttributes;
 	std::cout << "Are there some \"Metal\" on it? [y/n]:\t";
@@ -110,40 +113,30 @@ void UnAlive_Output::SearchByCriteria(std::vector<Product*> &pProd, double &Clie
 	}
 	if(strlen(TempMetal) > 0)
 	{
-		nCount++;
+        searchMask |= currentFlag;
 	}
 	for(unsigned int i=0; i < pProd.size(); ++i)
 	{
 		void* temp = pProd[i];
 		UnAlive_Product* pTemp = (UnAlive_Product*)temp;
-		switch(nCount)
-		{
-			case 1:
-				if((strlen(TempName) > 0 && strstr(pTemp->m_pName, TempName)) || pTemp->m_Attributes == TempAttributes)
-				{
-					std::cout << '\n' << j << "\tName:\t\t" << pTemp->m_pName << std::endl;
-					std::cout << "\tWeight(kg):\t" << pTemp->m_pWeight << std::endl;
-					std::cout << "\tMetal:" << (pTemp->m_Attributes == 0x01?"\t\tyes":"\t\tno") << std::endl;
-					std::cout << "\tPrice:\t\t" << pTemp->m_pPrice << std::endl;
-					std::cout << "\tQuantity:\t" << pTemp->m_pQuantity << std::endl;
-					ArrayFindProduct[j] = i;
-					++j;
-				}
-				break;
-			case 2:
-				if((strlen(TempName) > 0 && strstr(pTemp->m_pName, TempName)) && pTemp->m_Attributes == TempAttributes)
-				{
-					std::cout << '\n' << j << "\tName:\t\t" << pTemp->m_pName << std::endl;
-					std::cout << "\tWeight(kg):\t" << pTemp->m_pWeight << std::endl;
-					std::cout << "\tMetal:" << (pTemp->m_Attributes == 0x01?"\t\tyes":"\t\tno") << std::endl;
-					std::cout << "\tPrice:\t\t" << pTemp->m_pPrice << std::endl;
-					std::cout << "\tQuantity:\t" << pTemp->m_pQuantity << std::endl;
-					ArrayFindProduct[j] = i;
-					++j;
-				}
-				break;
-			default: break;
-		}
+        //reset currentFlag
+        char currentFlag = 1;
+        if (searchMask & currentFlag && !strstr(pTemp->m_pName, TempName))
+        {
+            continue;
+        }
+        currentFlag = currentFlag << 1;
+        if (searchMask & currentFlag && pTemp->m_Attributes != TempAttributes)
+        {
+            continue;
+        }
+		std::cout << '\n' << j << "\tName:\t\t" << pTemp->m_pName << std::endl;
+		std::cout << "\tWeight(kg):\t" << pTemp->m_pWeight << std::endl;
+		std::cout << "\tMetal:" << (pTemp->m_Attributes == 0x01?"\t\tyes":"\t\tno") << std::endl;
+		std::cout << "\tPrice:\t\t" << pTemp->m_pPrice << std::endl;
+		std::cout << "\tQuantity:\t" << pTemp->m_pQuantity << std::endl;
+		ArrayFindProduct[j] = i;
+		++j;
 	}
 	if(j == 0)
 		std::cout << "This item is not available...\nTry again ...\n";
