@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Flower_shop", "Flower_shop\Flower_shop.vcproj", "{11AED110-7DD7-4FBF-9278-4A78612B4D01}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Alive", "Alive\Alive.vcproj", "{877584DD-B345-44EF-90B5-50FBD61B7C7E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnAlive", "UnAlive\UnAlive.vcproj", "{39CDA889-7119-4E44-803D-2468B10C5BB8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{11AED110-7DD7-4FBF-9278-4A78612B4D01}.Debug|Win32.ActiveCfg = Debug|Win32
+		{11AED110-7DD7-4FBF-9278-4A78612B4D01}.Debug|Win32.Build.0 = Debug|Win32
+		{11AED110-7DD7-4FBF-9278-4A78612B4D01}.Release|Win32.ActiveCfg = Release|Win32
+		{11AED110-7DD7-4FBF-9278-4A78612B4D01}.Release|Win32.Build.0 = Release|Win32
+		{877584DD-B345-44EF-90B5-50FBD61B7C7E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{877584DD-B345-44EF-90B5-50FBD61B7C7E}.Debug|Win32.Build.0 = Debug|Win32
+		{877584DD-B345-44EF-90B5-50FBD61B7C7E}.Release|Win32.ActiveCfg = Release|Win32
+		{877584DD-B345-44EF-90B5-50FBD61B7C7E}.Release|Win32.Build.0 = Release|Win32
+		{39CDA889-7119-4E44-803D-2468B10C5BB8}.Debug|Win32.ActiveCfg = Debug|Win32
+		{39CDA889-7119-4E44-803D-2468B10C5BB8}.Debug|Win32.Build.0 = Debug|Win32
+		{39CDA889-7119-4E44-803D-2468B10C5BB8}.Release|Win32.ActiveCfg = Release|Win32
+		{39CDA889-7119-4E44-803D-2468B10C5BB8}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,7 @@
+*.user
+Debug/*
+Alive/Debug/*
+UnAlive/Debug/*
+*.nsb
+*.suo
+Flower_shop/Debug/*
