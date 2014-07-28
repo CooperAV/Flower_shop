@@ -5,12 +5,12 @@
 #include "Base_Input.h"
 #include "Base_Output.h"
 #include "Base_Factory.h"
+#include "GetIntroducingNumber.h"
 #include <time.h>
 
 typedef char*(*Get_Library_Func)();
 typedef char*(*Get_PushBack_Func)();
 typedef Base_Factory*(*InitFunc)();
-int GetInputNumber();
 
 class Category	//Класс связывающий всю бизнес-логику программы !!!
 {

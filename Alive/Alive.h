@@ -13,4 +13,3 @@
 #include "../Flower_shop/Base_Factory.h"
 
 extern "C" ALIVE_API Base_Factory* Init();
-int GetInputNumber();

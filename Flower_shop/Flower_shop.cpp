@@ -3,10 +3,6 @@
 
 #include "stdafx.h"
 #include <iostream>
-#include <string>
-#include <conio.h>
-#include <windows.h>
-#include <vector>
 #include "Shop.h"
 
 int _tmain(int argc, _TCHAR* argv[])

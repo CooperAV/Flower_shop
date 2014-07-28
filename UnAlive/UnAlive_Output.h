@@ -2,7 +2,7 @@
 #include "../Flower_shop/Base_Output.h"
 #include <vector>
 #include <conio.h>
-#include "UnAlive.h"
+#include "../Flower_shop/GetIntroducingNumber.h"
 
 class UnAlive_Output: public Base_Output	//Класс отвечающий за вывод данных!!!
 {

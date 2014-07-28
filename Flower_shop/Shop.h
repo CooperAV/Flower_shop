@@ -3,6 +3,7 @@
 #include "WorkOut.h"
 #include "Category.h"
 #include <conio.h>
+#include "GetIntroducingNumber.h"
 
 class Shop		//Класс отвечающий за всю бизнес-логику программы !!!
 {

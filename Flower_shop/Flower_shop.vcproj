@@ -179,6 +179,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\GetIntroducingNumber.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\Product.cpp"
 				>
 			</File>
@@ -234,6 +238,10 @@
 			</File>
 			<File
 				RelativePath=".\Category.h"
+				>
+			</File>
+			<File
+				RelativePath=".\GetIntroducingNumber.h"
 				>
 			</File>
 			<File

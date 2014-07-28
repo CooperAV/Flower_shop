@@ -217,6 +217,10 @@
 				</FileConfiguration>
 			</File>
 			<File
+				RelativePath="..\Flower_shop\GetIntroducingNumber.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\stdafx.cpp"
 				>
 				<FileConfiguration
@@ -280,6 +284,10 @@
 			</File>
 			<File
 				RelativePath="..\Flower_shop\Base_Output.h"
+				>
+			</File>
+			<File
+				RelativePath="..\Flower_shop\GetIntroducingNumber.h"
 				>
 			</File>
 			<File
