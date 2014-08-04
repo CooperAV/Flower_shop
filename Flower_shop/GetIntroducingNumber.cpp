@@ -59,5 +59,5 @@ int GetInputNumber()
 				Result = (Result * 10) + val[j];
 			}
 		}
-		return Result;
+	return Result;
 }

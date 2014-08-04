@@ -2,7 +2,6 @@
 #include "Alive_Factory.h"
 #include "Alive_Product.h"
 
-
 Alive_Factory::Alive_Factory()
 {
 	try{
