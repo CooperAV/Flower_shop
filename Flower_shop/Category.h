@@ -21,7 +21,7 @@ public:
 	void InputNewProduct();
 	void OutputProductList(bool ShowNumber = false);
 	void SaveFile();
-	void LoadFile();
+	bool LoadFile();
 	void Push_Back();
 	bool IsComplete();
 	char* GetLibraryName();
@@ -35,6 +35,7 @@ public:
 	char* GetProductNameByIndex(int Index);
 	void SetProductQuantityByIndex(int Index, unsigned int Quantity);
 private:
+	bool DataLoaded;
 	int nComplete;
 	int nChoice;
 	int GetCountProduct;

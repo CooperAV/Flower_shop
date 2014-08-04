@@ -12,7 +12,15 @@
 
 extern "C" UNALIVE_API Base_Factory* Init()
 {
-	return new UnAlive_Factory();
+	UnAlive_Factory* pFactory = NULL;
+	try{
+		pFactory = new UnAlive_Factory();
+	}
+	catch(...)
+	{
+		std::cout << "Error creating Alive_Factory\n";
+	}
+	return pFactory;
 }
 
 extern "C" UNALIVE_API char* GetLibraryName()

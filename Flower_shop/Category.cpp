@@ -5,6 +5,7 @@
 Category::Category(LPWSTR pLibrary)
 {
 	nComplete = 0;
+	DataLoaded = false;
 	srand(time(NULL));
 	InitFunc Init;
 	m_hMode = LoadLibrary(pLibrary);
@@ -41,14 +42,18 @@ Category::Category(LPWSTR pLibrary)
 		}
 	}
 	m_pBase_Factory = Init();
-	m_pBase_Input = m_pBase_Factory->GetInput();
-	m_pBase_Output = m_pBase_Factory->GetOutput();
-	m_pBase_File = m_pBase_Factory->GetOutFile();
-	LoadFile();
+	if(m_pBase_Factory && m_pBase_Factory->IsComplete())
+	{
+		m_pBase_Input = m_pBase_Factory->GetInput();
+		m_pBase_Output = m_pBase_Factory->GetOutput();
+		m_pBase_File = m_pBase_Factory->GetOutFile();
+		DataLoaded = LoadFile();
+	}
 }
 Category::~Category()
 {
-	for(unsigned int i=0; i<m_pProd.size(); ++i)
+	unsigned int nCountProd = m_pProd.size();
+	for(unsigned int i=0; i<nCountProd; ++i)
 		delete m_pProd[i];
 	if(m_hMode != NULL)
 	{
@@ -67,7 +72,7 @@ Category::~Category()
 
 bool Category::IsComplete()
 {
-	return nComplete == 3;
+	return nComplete == 3 && m_pBase_Factory && m_pBase_Factory->IsComplete() && DataLoaded;
 }
 int Category::GetRandEvents()
 {
@@ -80,7 +85,9 @@ char* Category::GetLibraryName()
 }
 void Category::InputNewProduct()
 {
-	m_pProd.push_back(m_pBase_Input->InputProduct());
+	Product* pProd = m_pBase_Input->InputProduct();
+	if(pProd)
+		m_pProd.push_back(pProd);
 }
 void Category::OutputProductList(bool ShowNumber)
 {
@@ -90,9 +97,9 @@ void Category::SaveFile()
 {
 	m_pBase_File->WriteFile(m_pProd);
 }
-void Category::LoadFile()
+bool Category::LoadFile()
 {
-	m_pBase_File->ReadFile(m_pProd);
+	return m_pBase_File->ReadFile(m_pProd);
 }
 void Category::Push_Back()
 {

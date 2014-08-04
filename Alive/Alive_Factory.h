@@ -17,7 +17,11 @@ public:
 	Base_Input* GetInput();
 	Base_Output* GetOutput();
 	Base_File* GetOutFile();
+	bool IsComplete();
 private:
+	bool Alive_Input_Created;
+	bool Alive_Output_Created;
+	bool Alive_File_Created;
 	Alive_Input *m_pA_In;
 	Alive_Output *m_pA_Out;
 	Alive_File *m_pA_File;

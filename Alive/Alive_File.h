@@ -8,7 +8,7 @@ public:
 	~Alive_File(){}
 
 	void WriteFile(const std::vector<Product*> &pProd);
-	void ReadFile(std::vector<Product*> &pProd);
+	bool ReadFile(std::vector<Product*> &pProd);
 	void PushBack(const std::vector<Product*> &pProd);
 private:
 	struct Data
